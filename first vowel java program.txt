@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+int isvowel(char c)
+{
+    switch(c)
+    {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
+             return 1;
+        default:
+             return 0;
+    }
+}
+int main()
+{
+    char string[100];
+    printf("Enter String:");
+    fgets(string,100,stdin);
+    int flag=0;
+    for(int i=0;string[i]!='\n';i++)
+    {
+        if(isvowel(string[i]))
+        {
+            printf("%c",string[i]);
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0)
+    {
+        printf("No vowel");
+    }
+}
