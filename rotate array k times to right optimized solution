@@ -1,0 +1,24 @@
+class Solution {
+    public void rotate(int[] nums, int k) 
+    {
+        int l=nums.length;
+        k=k%l;
+        rotatebyone(nums,0,l-1);
+        rotatebyone(nums,0,k-1);
+        rotatebyone(nums,k,l-1);
+
+    }
+    public void rotatebyone(int a[],int left,int right)
+    {
+        int i=left;
+        int j=right;
+        while(i<j)
+        {
+            int temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+            i++;
+            j--;
+        }
+    }
+}
